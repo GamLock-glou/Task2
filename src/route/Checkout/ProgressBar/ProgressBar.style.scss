@@ -1,0 +1,119 @@
+.ProgressBar {
+    display: flex;
+    height: 10rem;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--breadcrumbs-background);
+    flex-direction: row;
+    position: relative;
+    counter-reset: step;
+
+}
+
+.ProgressBar::before, .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+}
+
+.progress {
+    background-color: var(--primary-base-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    transition: 0.3s;
+}
+
+.ProgressStep {
+    width: 3rem;
+    height: 3rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#a1a1a1;
+}
+
+.ProgressStep::before {
+    counter-increment: step;
+    content: counter(step);
+}
+
+
+.ProgressStep::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 1rem;
+}
+
+.ProgessStepActive {
+    background: var(--primary-base-color);
+    color: #fff;
+    animation: animate 0.5s;
+}
+
+.ProgessStepActive::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 1rem;
+    color: black;
+}
+
+@keyframes animate {
+    from {
+        transform: scale(1, 0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+// .ProgressBar {
+//     display: flex;
+//     height: 5rem;
+//     align-items: center;
+//     justify-content: space-around;
+//     background: var(--breadcrumbs-background);
+//     flex-direction: row;
+// }
+
+// .ProgressBar_progress {
+//     background: rgb(192, 192, 192);
+//     color: rgb(95, 95, 95);
+// }
+
+// .ProgressBar .Line {
+//     background: var(--primary-base-color);
+//     height: 0.5rem;
+//     width: 100%;
+// }
+
+// .ProgressBar .ElementName {
+//     padding: 1rem;
+//     padding-top: 3rem;
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+// }
+
+// .ElementName .Circule {
+//     width: 3rem;
+//     height: 3rem;
+//     background: var(--primary-base-color);
+//     border-radius: 50%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     color: #fff;
+//     font-size: 14px;
+// }
