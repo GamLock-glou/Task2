@@ -9,7 +9,6 @@ class ProgressBar extends PureComponent {
         const a = 100 / keys.length;
         console.log(a);
         return ( <div className='ProgressBar'>
-            {/* Здесь говнокод, т.к. 2 часа ночи, хочу спать) */}
             <div className='progress' style={{ width: `${a * (idx+1)}%` }} id='progress'></div>
                 {keys.map((key,index) => {
                     const className = !checkProgressBar ? 'ProgressStep' : 'ProgressStep ProgessStepActive'
