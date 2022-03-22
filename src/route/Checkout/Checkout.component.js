@@ -354,7 +354,7 @@
          return (
              <div>
                 <main block="Checkout">
-                    <ProgressBar step={this.stepMap} checkoutStep={this.props.checkoutStep}/>
+                    <ProgressBar steps={this.stepMap} checkoutStep={this.props.checkoutStep}/>
                     <ContentWrapper
                     wrapperMix={ { block: 'Checkout', elem: 'Wrapper' } }
                     label={ __('Checkout page') }
