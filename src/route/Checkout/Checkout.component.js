@@ -258,7 +258,7 @@
  
          return null;
      }
- 
+
      renderLoader() {
          const { isLoading } = this.props;
          return <Loader isLoading={ isLoading } />;
@@ -354,14 +354,17 @@
          return (
              <div>
                 <main block="Checkout">
-                    <ProgressBar steps={this.stepMap} checkoutStep={this.props.checkoutStep}/>
+                    <ProgressBar
+                    steps={this.stepMap}
+                    checkoutStep={this.props.checkoutStep}
+                    />
                     <ContentWrapper
                     wrapperMix={ { block: 'Checkout', elem: 'Wrapper' } }
                     label={ __('Checkout page') }
                     >
                         { this.renderSummary(true) }
                         <div block="Checkout" elem="Step">
-                            { this.renderTitle() }
+                            {/* { this.renderTitle() } */}
                             { this.renderGuestForm() }
                             { this.renderStep() }
                             { this.renderLoader() }
